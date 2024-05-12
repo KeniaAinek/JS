@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fundamentos JavaScript</title>
+  </head>
+  <body>
+    <h1>Fundamentos JavaScript</h1>
+    <script>
+      var hola = "Hola Mundo";
+      let hello = "Hello World";
+      //console.log(hola);
+      //console.log(hello);
+      //console.log(window);
+      //console.log(window.hola);
+      //console.log(window.hello);
+      //Ambitos de bloque
+      /*("***********var************************************");
+           var musica = "rock";
+           console.log("Variable musica antes del bloque", musica);
+           {
+             var musica = "POP";
+             console.log("Variable musica dentro del bloque", musica);
+           }
+           console.log("Variable musica despues del bloque", musica);
+           ("***********let************************************");
+           let musica2 = "rock";
+           console.log("Variable musica antes del bloque", musica2);
+           {
+             let musica2 = "POP";
+             console.log("Variable musica dentro del bloque", musica2);
+           }
+           console.log("Variable musica despues del bloque", musica2); */
+      //Esto es un comentario de una linea
+      /*Esto
+           es una
+           variable de varias lineas*/
+   
+
+      /* const PI = 3.1416;
+      //console.log(PI);
+      a = "Kenai";
+      //console.log(a);
+
+      const objeto = {
+        nombre: "Jon",
+        edad: 35,
+      };
+
+      const colores = ["blanco", "negro", "azul"]; */
+
+      //console.log(objeto);
+      //console.log(colores);
+
+  /*     objeto.correo = "kenia.castro@gmail.com";
+      colores.push("anaranjado");  */
+
+      //console.log(objeto);
+      //console.log(colores);
+
+      //Cadenas de texto aka Stringd
+      /* let nombre = "Jon";
+      let apellido = "MirCha";
+      let saludo = new String("Hola Mundo"); */
+      //console.log(nombre, apellido, saludo);
+      //console.log(nombre.length, apellido.length, saludo.length);
+
+      //Concatenacion
+      /* let saludo1 = "Hola mi nombre es " + nombre + "" + apellido;
+
+      //interpolacion de variables
+      //Template String
+      let saludo2 = `Hola mi no nombre es ${nombre} ${apellido}.`;
+      //console.log(saludo2);
+
+      // numeros
+      let a1 = 2;
+      let b = new Number(1);
+      let c = 7.19;
+      let d = "5.6"; */
+
+      //console.log(a1,b);
+      //console.log(c.toFixed(1));
+      //console.log(c.toFixed(5));
+      //console.log(parseInt(c));
+      //console.log(parseFloat(c));
+      //console.log(typeof c, typeof d);
+      //console.log(a1 + b);
+      //console.log(c + d);
+      //console.log(c + parseInt(d));
+      //console.log(c + parseFloat(d));
+
+      /* let verdadero = true;
+      let falso = false;
+
+      //console.log(verdadero, falso);
+
+      //Undefined indica que no se ha inicializado una variable y que esta ausente
+      let indefinida;
+      //console.log(indefinida);
+
+      //null es un valor especial que indica la ausencia de un valor
+      let nulo = null;
+      //console.log(null);
+
+      //NaN - Not a Number
+      let noEsUnNumero = "Hola" * 3.7;
+      //console.log(noEsUnNumero);
+
+      //Funcion declarada
+      function estoEsUnaFuncion() {
+        //console.log("Uno");
+        //console.log("Dos");
+        //console.log("Tres");
+      }
+
+      function unaFuncionQueDevuelveValor() {
+        //console.log("Uno");
+        return 19;
+        //console.log("Dos");
+        //console.log("Tres");
+        return "La funcion ha retornado una Cadena de texto";
+      }
+
+      function saludar(nombre, edad) {
+        //console.log(`Hola mi nombre es ${nombre} y tengo ${edad}`);
+      }
+ */
+      //Invocacin de una funcion
+      /* estoEsUnaFuncion();
+      let valorDeFuncion = unaFuncionQueDevuelveValor();
+      //console.log(valorDeFuncion);
+      saludar("Kenai", 7);
+      saludar();
+
+      //Funciones declaradas VS funciones expresadas
+      funcioDeclarada(); */
+
+      /* function funcioDeclarada() {
+        //console.log("Esto es una funcion declarada puede invocarse en cualquier parte del codigo, incluso antes de que la funcion sea declarada")
+      }
+
+      funcioDeclarada();
+ */
+      // funcion aninima
+
+      //funcionExpresada();
+
+      /* const funcionExpresada = function (){
+             //console.log("Esto es una funcion expresada, es decir, una funcion que se le ha asignado como valor a una variable, si invocamos esta funcion antes de su definicion JS nos dira...")
+           }
+
+           funcionExpresada();
+           Arreglos
+           const f = [];
+           const j = [1, true, "Hola",["A","B","C",[1,2,3]]];
+           console.log(f);
+           console.log(j);
+           console.log(j.length);
+           console.log(j[2]);
+           console.log(j[3]);
+           console.log(j[3][2]);
+           console.log(j[3][3][0]);
+
+           const h = Array.of("X","Y","Z",9,8,7);
+           console.log(c);
+
+           const l = Array(100).fill(false);
+           console.log(l);
+
+           const e = new Array();
+           console.log(e);
+
+           const k = new Array(1,2,3,true,false);
+           console.log(k);
+
+           const colores1 = ["rojo","verde","azul"];
+           console.log(colores1);
+           colores1.push("negro");
+           console.log(colores1);
+           colores1.pop();
+           console.log(colores1);
+
+           colores1.forEach(function(e,index){
+             console.log(`<li id="${index}">${e}</li>`);
+           }); */
+
+      //Objetos
+     /*  const p = new Object();
+      console.log(p); */
+      /*Dentro de un objeto a las variables se les llama atributos/propiedades y a las funciones se les llama metodos*/
+
+      /*  const kenia = {
+             nombre: "Kenia",
+             apellido: "Castro",
+             edad: 35,
+             pasatiempos: ["Correr","Pintar","leer"],
+             soltera: true,
+             contacto: {
+               email: "keniad.ctorres@gmail.com",
+               twiter: "@Kenia",
+               movil: "554875875"
+             },
+             saludar: function (){
+               console.log("Hola");
+             },
+             decirMiNombre: function (){
+               console.log(`Hola me llamo ${this.nombre} ${this.apellido} y tengo ${this.edad}`);
+             }
+           } */
+
+      /* console.log(kenia);
+           console.log(kenia["nombre"]);
+           console.log(kenia["apellido"]);
+           console.log(kenia.nombre);
+           kenia.saludar();
+           kenia.decirMiNombre();
+
+           console.log(Object.keys(kenia));
+           console.log(Object.values(kenia));
+           console.log(kenia.hasOwnProperty("nombre")); */
+
+      /*Operadores*/
+      /*Aritmeticos*/
+      /*   let ejemplo = 5 + (5 - 10) *3;
+           let modulo = 5 % 2;
+           console.log(ejemplo);
+           console.log(modulo); */
+
+      /*Relacionales*/
+      /* console.log(8 > 9);
+           console.log(8 < 9);
+           console.log(8 <= 9);
+           console.log(8 >= 9);
+           console.log(7 <= 7); */
+
+      /* Asignacion
+             == igual a
+             === comparacion de tipo de dato y de valores
+             console.log(7 == 7);
+             console.log("7" == 7);
+             console.log("7" === 7);
+
+             //Inncremento y decremento
+             let i = 1;
+             //i = i + 2;
+             i-=3;
+             console.log(i); */
+
+      /*
+             //Operador unario
+             i++;
+             i--;
+             ++i;
+             --i;
+             console.log(i); */
+      /*
+             //Logicos
+             console.log(!true);
+             console.log(!false);
+             console.log((9===9)||(9===9));
+             console.log((9===8)&&(9===9)); */
+
+      //Condicionales
+      /* let edad = 17;
+
+           if (edad > 17) {
+             console.log("Eres mayor de edad");
+           } else {
+             console.log("Eres menor de edad");
+           }
+
+           let hora = 8;
+           if (hora >= 0 && hora <= 5) {
+             console.log("Dejame dormir");
+           } else if (hora >= 6 && hora <= 11) {
+             console.log("Buenos dias");
+           } else if (hora >= 12 && hora <= 18) {
+             console.log("Buenas tardes");
+           } else {
+             console.log("Buenas noches");
+           }
+
+           //Operador ternario condcicion ? veradero :falsa
+           console.log("operador ternario");
+           let eresMayor = edad >= 18 ? "Eres mayor de edad" : "Eres menor de edad";
+           console.log(eresMayor);
+
+           //switch-case
+           let dia = 2;
+           switch(dia){
+             case 0:
+               console.log("Domingo");
+             break;
+             case 1:
+               console.log("Lunes");
+             break;
+             case 2:
+               console.log("Martes");
+             break;
+             case 3:
+               console.log("Miercoles");
+             break;
+             case 4:
+               console.log("Jueves");
+             break;
+             case 5:
+               console.log("Viernes");
+             break;
+             case 6:
+               console.log("Sabado");
+             break;
+             default:
+             console.log("El dia no existe");
+               break;
+           } */
+      /*
+           let contador = 0;
+
+           while(contador > 10){
+             console.log(contador);
+             contador++;
+           }
+
+           do{
+             console.log(contador);
+             contador++;
+           }while(contador > 10);
+      */
+
+      /*   for (let i = 0; i <= 10; i++) {
+             console.log(i);
+           }
+
+           let numeros = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+           for (let i = 0; i < numeros.length; i++) {
+             console.log(numeros[i]);
+           }
+
+           const ken = {
+             nombre: "Kenia",
+             apellido: "Castro",
+             edad: 29,
+           };
+
+           for (const propiedad in ken) {
+             console.log(`Key: ${propiedad}, Value: ${ken[propiedad]}`);
+           }
+
+           let cadena = "Hola mundo";
+
+           for (const elemento of cadena) {
+             console.log(elemento);
+           }
+      */
+      //Deteccion de errores
+      /* try {
+             console.log("En el try se agrega el codigo a evaluar");
+           } catch (error) {
+             console.log("Captura cualquier error surgido o lanzado en el try");
+           } finally {
+             console.log("El bloque finally se ejecutara siempre al final de un bloque try-catch");
+           }
+
+           try{
+             let numero= "r";
+             if(isNaN(numero)){
+                throw new Error("El caracter introducido no es un numero");
+             }
+             console.log(numero*numero);
+           }catch(error){
+            console.log(`Se produjo el siguiente error:${error}`);
+           } */
+      /* const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+      for (let i = 0; i < numeros.length; i++) {
+        if (i === 5) {
+          break;
+        }
+        console.log(numeros[i]);
+      }
+
+      for (let i = 0; i < numeros.length; i++) {
+        if (i === 5) {
+          continue;
+        }
+        console.log(numeros[i]);
+      } */
+
+      //Destructuracion
+      /* const numeros = [1, 2, 3];
+      const[uno,dos,tres] =  numeros;
+      console.log(uno, dos, tres);
+
+      let persona = {
+        nombre: "Ken",
+        apellido: "Castro",
+        edad: 29
+      };
+
+      let {nombre, apellido, edad} = persona;
+      console.log(nombre, apellido, edad); */
+
+      //Objetos literales
+      let nombre = "Kenai";
+      let edad =  7;
+
+      const dog = {
+        nombre,
+        edad,
+        raza: "callejero",
+        ladrar(){
+          console.log("guauu guauuu!!");
+        }
+      }
+
+      console.log(dog); 
+      dog.ladrar();
+
+    </script>
+  </body>
+</html>
