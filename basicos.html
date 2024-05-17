@@ -36,7 +36,6 @@
       /*Esto
            es una
            variable de varias lineas*/
-   
 
       /* const PI = 3.1416;
       //console.log(PI);
@@ -53,7 +52,7 @@
       //console.log(objeto);
       //console.log(colores);
 
-  /*     objeto.correo = "kenia.castro@gmail.com";
+      /*     objeto.correo = "kenia.castro@gmail.com";
       colores.push("anaranjado");  */
 
       //console.log(objeto);
@@ -187,7 +186,7 @@
            }); */
 
       //Objetos
-     /*  const p = new Object();
+      /*  const p = new Object();
       console.log(p); */
       /*Dentro de un objeto a las variables se les llama atributos/propiedades y a las funciones se les llama metodos*/
 
@@ -402,7 +401,7 @@
       console.log(nombre, apellido, edad); */
 
       //Objetos literales
-      let nombre = "Kenai";
+      /* let nombre = "Kenai";
       let edad =  7;
 
       const dog = {
@@ -415,7 +414,206 @@
       }
 
       console.log(dog); 
-      dog.ladrar();
+      dog.ladrar(); */
+
+      // REST & Spread
+      /* function sumar(a,b,...c){
+        let resultado = a + b;
+        c.forEach(function (n){
+          resultado += n
+        });
+        return resultado;
+      }
+      console.log(sumar(1,2));
+      console.log(sumar(1,2,3));
+      console.log(sumar(1,2,3,4));
+      console.log(sumar(1,2,3,4,5));
+
+      const arr1 = [1,2,3,4,5], arr2 = [6,7,8,9,0];
+      console.log(arr1,arr2);
+
+      const arr3 = [...arr1,...arr2];
+      console.log(arr3); */
+
+      //Arrow funtions
+      /* const saludo = ()=>console.log("Hola");
+      saludo(); */
+      /*   const saludo = nombre =>console.log(`Hola ${nombre}`);
+      saludo("Kenia");
+
+      /* const sumar = function(a,b){
+        return a + b;
+      } */
+      /* 
+      const sumar = (a,b) => a+b;
+
+      console.log(sumar(9,9));
+
+      const funcionDeVariasLineas = () =>{
+        console.log("uno");
+        console.log("dos");
+        console.log("tres");
+      }
+
+      funcionDeVariasLineas();
+
+      const numeros = [1,2,3,4,5];
+
+      numeros.forEach((el,index) =>
+        console.log(`${el} esta en la posicion ${index}`)); */
+
+      /*  function perro(){
+        console.log(this);
+      }
+      perro(); */
+
+      /*  const perro = {
+        nombre: "Kenai",
+        ladrar(){
+          console.log(this);
+        }
+      }
+      
+      perro.ladrar();  */
+
+      //POO Clases(Metodo a seguir), objetos(atributo, metodos)
+
+      /* const animal = {
+        nombre: "Snoopy",
+        sonar(){
+          console.log("Hago sonidos por que estoy vivo");
+        }
+      }
+      console.log(animal);
+
+      const animal2 = {
+        nombre: "Lola Bunny",
+        sonar(){
+          console.log("Hago sonidos por que estoy vivo");
+        }
+      }
+      console.log(animal2); */
+
+      //funcion constructora (prototipos)
+      /* function Animal (nombre,genero){
+        this.nombre = nombre;
+        this.genero = genero;
+
+        this.sonar = function(){
+          console.log("Hago sonidos porque estoy vivo");
+        }
+
+        this.saludar = function(){
+        console.log(`Hola me llamo ${this.nombre}`);
+      }
+      }
+
+      const snoopy = new Animal("Snoopy","Macho"), lolaBunny = new Animal("Lola Bunny","Hembra"); */
+
+      /*  function Animal (nombre,genero){
+        this.nombre = nombre;
+        this.genero = genero;
+
+      }
+      Animal.prototype.sonar = function(){
+          console.log("Hago sonidos porque estoy vivo");
+        }
+
+        Animal.prototype.saludar = function(){
+        console.log(`Hola me llamo ${this.nombre}`);
+      } */
+
+      //Herencia Prototipica
+      /* function Perro(nombre, genero,tamanio){
+        this.super = Animal;
+        this.super(nombre,genero);
+        this.tamanio = tamanio;
+      }
+
+      Perro.prototype = new Animal();
+      Perro.prototype.constructor = Perro;
+ */
+      //Sobreescritura del prototipo padre en el hijo
+      /*   Perro.prototype.sonar = function (){
+        console.log("Soy un perro y mi sonido es un ladrido");
+      }
+
+      Perro.prototype.ladrar = function (){
+        console.log("Guauuuu Guauuu!!!!!!");
+      }
+
+      const snoopy = new Animal("Snoopy","Macho","Mediano"), lolaBunny = new Animal("Lola Bunny","Hembra");
+
+
+     
+      console.log(snoopy);
+      console.log(lolaBunny);
+
+      snoopy.sonar();
+      snoopy.saludar();
+      lolaBunny.sonar();
+      lolaBunny.saludar();
+
+ */
+
+      //Clases
+
+      class Animal {
+        constructor(nombre, genero) {
+          this.nombre = nombre;
+          this.genero = genero;
+          this.raza = null;
+        }
+        sonar() {
+          console.log("Hago sonidos porque estoy vivo");
+        }
+
+        saludar() {
+          console.log(`Hola me llamo ${this.nombre}`);
+        }
+      }
+
+      class Perro extends Animal{
+        constructor(nombre, genero, tamanio){
+          super(nombre, genero);
+          this.tamanio = tamanio;
+        }
+
+          sonar(){
+            console.log("Soy un perro y mi sonido es un ladrido");
+          }
+
+          ladrar(){
+            console.log("Guauuuu Guauuu!!!!!!");
+          }
+
+          static queEres(){
+            console.log("los perror son");
+          }
+
+          get getRaza(){
+            return this.raza;
+          }
+
+          set setRaza(raza){
+            this.raza = raza;
+          }
+      }
+
+      Perro.queEres();
+
+      const mimi = new Animal("Mimi","Hembra"), scooby = new Perro("Scooby","Macho","Gigante");
+
+      console.log(mimi);
+      mimi.saludar();
+      mimi.sonar();
+      console.log(scooby);
+      scooby.saludar();
+      scooby.sonar();
+      console.log(scooby.getRaza);
+      scooby.setRaza = "Gran Danes";
+      console.log(scooby.getRaza);
+     
 
     </script>
   </body>
