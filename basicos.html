@@ -631,6 +631,61 @@
     console.log(fecha.getMilliseconds());
     console.log(fecha.toString());
     console.log(fecha.toDateString());
+    console.log(fecha.toLocaleString());
+    console.log(fecha.toLocaleDateString());
+    console.log(fecha.toLocaleTimeString());
+    console.log(fecha.getTimezoneOffset());
+    console.log(fecha.getUTCDate());
+    console.log(fecha.getUTCHours());
+    console.log(Date.now());
+    let cumpleKense = new Date(1994,11,29);
+    console.log(cumpleKense);
+
+    console.clear();
+
+    console.log(Math);
+    console.log(Math.PI);
+    console.log(Math.abs(7.8));
+    console.log(Math.ceil(7.2));
+    console.log(Math.floor(7.8));
+    console.log(Math.round(7.8));
+    console.log(Math.sqrt(81));
+    console.log(Math.pow(2,5));
+    console.log(Math.sign(-7,8));
+    console.log(Math.random());
+    console.log(Math.round(Math.random() * 1000));
+    console.clear();
+
+
+     function saludar(nombre){
+      nombre = nombre || "Desconocido";
+      console.log(`Hola ${nombre}`);
+     }
+
+     saludar('Kense');
+     saludar();
+
+    console.log("Cadena" || "Valor de la derecha");
+    console.log(19 || "Valor de la derecha");
+    console.log(true || "Valor de la derecha");
+    console.log([] || "Valor de la derecha");
+    console.log({} || "Valor de la derecha");
+    console.log(false || "Valor de la derecha");
+    console.log(null || "Valor de la derecha");
+    console.log(undefined || "Valor de la derecha");
+    console.log("" || "Valor de la derecha");
+    console.log(-2 || "Valor de la derecha");
+
+    console.log(false && "Valor de la derecha");
+    console.log(null && "Valor de la derecha");
+    console.log(undefined && "Valor de la derecha");
+    console.log("" && "Valor de la derecha");
+    console.log(-2 && "Valor de la derecha");
+    console.log("Cadena" || "Valor de la derecha");
+    console.log(19 || "Valor de la derecha");
+    console.log(true || "Valor de la derecha");
+    console.log([] || "Valor de la derecha");
+    console.log({} || "Valor de la derecha");
 
     </script>
   </body>
