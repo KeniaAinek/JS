@@ -1,50 +1,74 @@
 // 1 funcion contadora de caracteres en una cadena
 function caracters(cadena) {
-  let caracteres;
+  if(!cadena){
+    console.log("La cadena esta vacia")
+  }
+  else{if (typeof cadena !== "string") {
+    console.log(
+      "Los caracteres que ingresaste no son de tipo cadena por lo que convertiran a cadena para hacer el proceso"
+    );
+    let convert = cadena.toString();
+    console.info(`La cadena ${convert} tiene: ${convert.length} caracteres`);
+  } else {
+    
+    console.info(`La cadena ${cadena} tiene: ${cadena.length} caracteres`);
+  }
+}
+}
+
+caracters("Hola estrella Evangeline");
+
+// 2 Funcion que recorta cadena en el total de caracteres pedido
+function recorte(cadena, ini, rec) {
+  //rec = rec - 1;
+  let nCadena = "";
   if (typeof cadena !== "string") {
     console.log(
       "Los caracteres que ingresaste no son de tipo cadena por lo que convertiran a cadena para hacer el proceso"
     );
     let convert = cadena.toString();
-    for (let i = 0; i <= convert.length; i++) {
-      caracteres = i++;
-    }
-    console.log(`La cadena introducida tiene: ${caracteres}`);
+    nCadena = convert.substr(ini, rec);
+    console.log(nCadena);
   } else {
-    for (let i = 0; i <= cadena.length; i++) {
-      caracteres = i++;
-    }
-    console.log(`La cadena introducida tiene: ${caracteres}`);
-  }
-}
-
-caracters(1994);
-
-// 2 Funcion que recorta cadena en el total de caracteres pedido
-function recorte(cadena, rec) {
-  rec = rec - 1;
-  let nCadena = "";
-  if (typeof cadena !== "string") {
-    console.log("Los caracteres que ingresaste no son de tipo cadena por lo que convertiran a cadena para hacer el proceso");
-    let convert = cadena.toString();
-    for (let i = 0; i <= rec; i++) {
-        nCadena += convert[i];
-    }
-    console.log(nCadena);
-  }
-  else {
-    for (let i = 0; i <= rec; i++) {
-      nCadena += cadena[i];
-    }
+    nCadena = cadena.substr(ini, rec);
     console.log(nCadena);
   }
 }
 
-recorte(33333333, 5);
+recorte("Hola Kenia", 0, 5);
 
 // 3 separar cadena por caracter
-function separador(cadena, sep){
-
+function separador(cadena, sep) {
+    let nCadena = "";
+    if (typeof cadena !== "string") {
+      console.log(
+        "Los caracteres que ingresaste no son de tipo cadena por lo que convertiran a cadena para hacer el proceso"
+      );
+      let convert = cadena.toString();
+      nCadena = convert.split(sep);
+      console.log(nCadena);
+    } else {
+        nCadena = cadena.split(sep);
+      console.log(nCadena);
+    }
 }
 
-separador("Turtle rabbit Jisoo Kim", ".");
+separador("Turtle rabbit Jisoo Kim", " ");
+
+// funcion que repite texto 
+function repetir(cadena, count){
+    let nCadena = "";
+    if (typeof cadena !== "string") {
+      console.log(
+        "Los caracteres que ingresaste no son de tipo cadena por lo que convertiran a cadena para hacer el proceso"
+      );
+      let convert = cadena.toString();
+      nCadena = convert.repeat(count);
+      console.log(nCadena);
+    } else {
+      nCadena = cadena.repeat(count);
+      console.log(nCadena);
+    }
+}
+
+repetir("Turtle rabbit Jisoo Kim", 7);
