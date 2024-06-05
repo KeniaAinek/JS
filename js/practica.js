@@ -116,7 +116,8 @@ const reverso = (cadena) =>
   reverso("Kenia");
 
   //6) Programa una función para contar el número de veces que se repite una palabra en un texto largo, pe. miFuncion("hola mundo adios mundo", "mundo") devolverá 2
-  const repetido = (cadena = "", word = "",contador = 0) => { 
+  const repetido = (cadena = "", word = "") => { 
+    let contador = 0;
     if(!cadena) return console.warn("La cadena esta vacia");
     if(!word) return console.warn("La cadena a buscar esta vacia");
     let nCadena = cadena.toLowerCase().split(" ");
@@ -129,35 +130,69 @@ const reverso = (cadena) =>
 }
 
 repetido("Amo el olor de las flores, el color del otoño, tu sonrisa, pero me duele el silencio entre nosotros. Me pregunto si en algun momneto se acabara ese silencio silencio silencio",  "Silencio");
+
+
   //7) Programa una función que valide si una palabra o frase dada, es un palíndromo (que se lee igual en un sentido que en otro), pe. mifuncion("Salas") devolverá true.
   const esPalindromo = (cadena) => {
-    let palindromo = true;
   if(!cadena)
   console.warn("La cadena esta vacia");
-let nCadena
-  //let nCadena = cadena.split(" ").reverse().join();
-  for(let i = cadena.length; i < 0; i--)
-    console.log(nCadena[i]);
+  cadena = cadena.toLowerCase();
+  let alReves = cadena.split("").reverse().join("");
   
-  if(cadena === nCadena) 
-   console.log(`La palabra ingresada es un palindromo ${palindromo}`);
-  else return console.log(`La palabra ingresada no es es un palindromo ${!palindromo}`);
+  if(cadena === alReves) 
+   console.log(`La palabra ingresada es un palindromo.`);
+  else return console.log(`La palabra ingresada no es es un palindromo.`);
   }
 
-  esPalindromo("Anita lava la tina");
+  esPalindromo("lap");
   
 
   //8) Programa una función que elimine cierto patrón de caracteres de un texto dado, pe. miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") devolverá  "1, 2, 3, 4 y 5.
+const patronRepetido = (cadena = "", patron = "") =>
+  (!cadena)?
+  console.warn("No ingresaste texto"):(!patron)?
+  console.warn("No ingresaste un patron"):
+  console.info(cadena.replace(new RegExp(patron,"ig"),""));
 
-
+patronRepetido("xyz1, xyz2, xyz3, xyz4 y xyz5","xyz");
 
  // 9) Programa una función que obtenga un numero aleatorio entre 501 y 600.
+const numeroAleatorio = (min = 501, max = 600) =>
+  {
+    let randomNumber = Math.round(Math.random() * (max - min) + min);
+    console.log(randomNumber);
+  }
 
+  numeroAleatorio();
 
 
 //10) Programa una función que reciba un número y evalúe si es capicúa o no (que se lee igual en un sentido que en otro), pe. miFuncion(2002) devolverá true.
+const capicúa = (numero = 0) =>
+  { 
+    if(!numero)
+    console.warn("No ha ingresado un numero para comparar");
+   if(Math.sign(numero) === -1)
+   console.warn("El numero no puede ser negativo");
+   let reverso =  numero.toString().split("").reverse().join("");
+   if(numero == reverso)
+    console.log(`El numero ingresado ${numero} es capicua`);
+  else console.log(`El numero ingresado ${numero} no es capicua`);
+  }
 
-
+capicúa(2442);
 
 //11) Programa una función que calcule el factorial de un número (El factorial de un entero positivo n, se define como el producto de todos los números enteros positivos desde 1 hasta n), pe. miFuncion(5) devolverá 120.
+const factorial = (factor = 0) =>{
+  if(!factorial)
+    console.warn("No ha ingresado un numero para comparar");
+   if(Math.sign(factor) === -1)
+   console.warn("El numero no puede ser negativo");
+  let producto;
+  for(i = 1; i <= factor; i++)
+    factor = i;
+    producto = factor * i;
+    
+ console.log(`El factorial de ${factor} es ${producto}`);
+}
 
+factorial(5);
