@@ -199,15 +199,14 @@ const esNumeroPrimo = (numero = undefined) =>
     if(numero === undefined)
       console.log("No ha ingresado un numero");
     if(Math.sign(numero) === -1) console.warn("El numero no puede ser negativo");
-    let residuo = numero%2;
-    let residuo1 = numero%1;
-    console.log(residuo1);
-    if(residuo == 0 && residuo1 == 1 )
-    console.log(`El numero ${numero} no es un numero primo`);
+    let residuo = numero%1, residuo1 = numero%3, residuo2 = numero%numero, residuo3 = numero%5;
+    console.log(residuo2);
+    if(residuo == 0 || residuo2 == 0 || residuo1 == 1 || residuo3 == 1)
+    console.log(`El numero ${numero}  es un numero primo`);
   else
-  console.log(`El numero ${numero} es un numero primo`);
+  console.log(`El numero ${numero} no es un numero primo`);
   }
-  esNumeroPrimo(12);
+  esNumeroPrimo(25);
 
 // 13) Programa una función que determine si un número es par o impar, pe. miFuncion(29) devolverá Impar.
 const parImpar = (numero = undefined) =>
@@ -225,3 +224,8 @@ const parImpar = (numero = undefined) =>
 
 
 // 14) Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolverá 32°F.
+ const convertCf = (grados = 0, dis = "C") =>{
+
+ }
+
+ convertCf()
