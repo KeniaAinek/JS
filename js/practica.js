@@ -167,7 +167,7 @@ const numeroAleatorio = () => {
 
 numeroAleatorio();
 
-//10) Programa una función que reciba un número y evalúe si es capicúa o no (que se lee igual en un sentido que en otro), pe. miFuncion(2002) devolverá true.
+//10) Programa una función que reciba un número y evalúe si es capicúa o no (que se lee igual en un sentido que en otro), pe. miFuncion(2002) devolverá true
 const capicúa = (numero = 0) => {
   if (!numero) console.warn("No ha ingresado un numero para comparar");
   if (typeof numero !== "number")
@@ -194,19 +194,19 @@ const factorial = (factor = 0) => {
 factorial(5);
 
 // 12) Programa una función que determine si un número es primo (aquel que solo es divisible por sí mismo y 1) o no, pe. miFuncion(7) devolverá true.
-const esNumeroPrimo = (numero = undefined) =>
+/* const esNumeroPrimo = (numero = undefined) =>
   {
     if(numero === undefined)
       console.log("No ha ingresado un numero");
     if(Math.sign(numero) === -1) console.warn("El numero no puede ser negativo");
-    let residuo = numero%1, residuo1 = numero%3, residuo2 = numero%numero, residuo3 = numero%5;
-    console.log(residuo2);
-    if(residuo == 0 || residuo2 == 0 || residuo1 == 1 || residuo3 == 1)
+    let residuo;
+
+    for(let i = 1; i <= 9; i++)
     console.log(`El numero ${numero}  es un numero primo`);
-  else
+ 
   console.log(`El numero ${numero} no es un numero primo`);
   }
-  esNumeroPrimo(25);
+  esNumeroPrimo(25); */
 
 // 13) Programa una función que determine si un número es par o impar, pe. miFuncion(29) devolverá Impar.
 const parImpar = (numero = undefined) =>
@@ -220,12 +220,30 @@ const parImpar = (numero = undefined) =>
   else
   console.log(`El numero ${numero} es un numero impar`);
   }
+
   parImpar(7);
 
 
 // 14) Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolverá 32°F.
- const convertCf = (grados = 0, dis = "C") =>{
-
+const convertCf = (grados = 0, dis = "C") => {
+  if(!grados)
+   { console.warn("No ha ingresado los grados");}
+  if(!dis)
+   { console.warn("No ingreso el identificador de los grados");}
+  if(dis === "C")
+    {var far = Math.round((grados * 1.8) + 32); 
+  console.log(`${grados} ${dis} son ${far} F`);}
+  else
+  {var cel = Math.round((grados - 32) / 1.8);
+  console.log(`${grados} ${dis} son ${cel} C`);}
  }
+ 
+ convertCf(28,"C");
 
- convertCf()
+ //15) Programa una función para convertir números de base binaria a decimal y viceversa, pe. miFuncion(100,2) devolverá 4 base 10.
+
+
+ //16) Programa una función que devuelva el monto final después de aplicar un descuento a una cantidad dada, pe. miFuncion(1000, 20) devolverá 800.
+
+
+// 17) Programa una función que dada una fecha válida determine cuantos años han pasado hasta el día de hoy, pe. miFuncion(new Date(1984,4,23)) devolverá 35 años (en 2020).
