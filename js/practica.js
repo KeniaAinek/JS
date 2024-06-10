@@ -194,19 +194,29 @@ const factorial = (factor = 0) => {
 factorial(5);
 
 // 12) Programa una función que determine si un número es primo (aquel que solo es divisible por sí mismo y 1) o no, pe. miFuncion(7) devolverá true.
-/* const esNumeroPrimo = (numero = undefined) =>
+const esNumeroPrimo = (numero = undefined) =>
   {
     if(numero === undefined)
-      console.log("No ha ingresado un numero");
+     return console.warn("No ha ingresado un numero");
+    if(typeof numero !== "number")
+      return console.warn(`El valor ${numero} ingresado, No es un numero`);
+    if(numero === 0)
+      console.warn("El numero no puede ser 0"); 
+    if(numero === 1)
+      console.warn("El numero no puede ser 1"); 
     if(Math.sign(numero) === -1) console.warn("El numero no puede ser negativo");
-    let residuo;
-
-    for(let i = 1; i <= 9; i++)
-    console.log(`El numero ${numero}  es un numero primo`);
- 
-  console.log(`El numero ${numero} no es un numero primo`);
+    let divisible = false;
+    for(let i = 2; i < numero; i++){
+      if(numero%i === 0){
+        divisible = true;
+        break;
+      }
+    }
+    return(divisible)
+    ?console.log(`El numero ${numero} no es primo`)
+    :console.log(`El numero ${numero} es primo`);
   }
-  esNumeroPrimo(25); */
+  esNumeroPrimo(23);
 
 // 13) Programa una función que determine si un número es par o impar, pe. miFuncion(29) devolverá Impar.
 const parImpar = (numero = undefined) =>
@@ -241,9 +251,68 @@ const convertCf = (grados = 0, dis = "C") => {
  convertCf(28,"C");
 
  //15) Programa una función para convertir números de base binaria a decimal y viceversa, pe. miFuncion(100,2) devolverá 4 base 10.
+const convert = (numero = undefined, base = undefined) => {
+  if(numero === undefined)
+    return console.warn("No ha ingresado un numero");
+   if(typeof numero !== "number")
+     return console.warn(`El valor ${numero} ingresado, No es un numero`);
+   if(base === undefined)
+    return console.warn("No ha ingresado un numero");
+  if(typeof base !== "number")
+    return console.warn(`El valor ${base} ingresado no es un numero`);
+  if (base === 2){
+    return console.log(`${numero} base ${base} = ${parseInt(numero, base)} base 10`); 
+  } else if(base === 10){
+    return console.log(`${numero} base ${base} = ${numero.toString(2)} base 2`); 
+  }
+}
+ 
+convert(29,10);
 
 
  //16) Programa una función que devuelva el monto final después de aplicar un descuento a una cantidad dada, pe. miFuncion(1000, 20) devolverá 800.
+const descuento = (monto = undefined, desc = undefined) =>{
+  if(monto === undefined || desc === undefined)
+    return console.warn("No ha ingresado un monto o descuento");
+   if(monto === 0)
+     console.warn("El monto no puede ser 0");    
+   if(Math.sign(monto) === -1) console.warn("El numero no puede ser negativo");
 
+   let montoDesc = (desc / 100) * monto;
+   let total = monto - montoDesc;
+   console.log(`Se aplico descuento del ${desc}% al precio ${monto} danto un total de ${total}`);
+}
+
+descuento(10000, 15);
 
 // 17) Programa una función que dada una fecha válida determine cuantos años han pasado hasta el día de hoy, pe. miFuncion(new Date(1984,4,23)) devolverá 35 años (en 2020).
+const aniosTranscurridos = (date = undefined) => {
+  if (date === undefined) console.warn("No ha ingresado una fecha");
+  if (!(date instanceof Date)) console.error("El dato ingresado no es una fecha");
+  
+  let todayMenosFecha = new Date().getTime() - date.getTime(),
+   anios = 1000 * 60 * 60 * 24 * 365
+  aniosHumanos = Math.floor(todayMenosFecha / anios);
+
+  return(Math.sign(aniosHumanos) === -1)
+  ? console.log(`Faltan ${Math.abs(aniosHumanos)} años para el ${fecha.getFullYear()}`) : 
+  (Math.sign(aniosHumanos) === 1) 
+  ? console.log(`Han pasado ${aniosHumanos} años desde  ${date.getFullYear()}`)
+  : console.log(`Estamos en el año actual ${fecha.getFullYear()}`)
+
+}
+
+aniosTranscurridos(new Date(2010,3,24));
+
+//18) Programa una función que dada una cadena de texto cuente el número de vocales y consonantes, pe. miFuncion("Hola Mundo") devuelva Vocales: 4, Consonantes: 5.
+const contadorLetras = (word = "") =>{
+  
+}
+
+
+//19) Programa una función que valide que un texto sea un nombre válido, pe. miFuncion("Jonathan MirCha") devolverá verdadero.
+
+
+
+
+//20) Programa una función que valide que un texto sea un email válido, pe. miFuncion("jonmircha@gmail.com") devolverá verdadero.
