@@ -305,14 +305,47 @@ const aniosTranscurridos = (date = undefined) => {
 aniosTranscurridos(new Date(2010,3,24));
 
 //18) Programa una función que dada una cadena de texto cuente el número de vocales y consonantes, pe. miFuncion("Hola Mundo") devuelva Vocales: 4, Consonantes: 5.
-const contadorLetras = (word = "") =>{
-  
+const contadorLetras = (cadena = "") =>{
+  if(!cadena) 
+    console.warn("No ha ingresado una cadena");
+  if(cadena === "")
+    console.warn("La cadena esta vacia");
+  cadena = cadena.toLocaleLowerCase();
+  let vocales = ['a','e','i','o','u'];
+  let consonantes = ['b','c','d','f','g','h','j','k','l','m','n','p','q','r','s','t','v','w','x','y','z'];
+  let contadorVocales = 0;
+  let contadorConsonantes = 0;
+  for(let i = 0; i < cadena.length; i++)
+    {
+      for(let j = 0; j < vocales.length; j++)
+        {
+          if(cadena[i] === vocales[j]){
+            contadorVocales += 1;
+          }
+        }
+        for(let k = 0; k < consonantes.length; k++)
+          {
+            if(cadena[i] === consonantes[k]){
+              contadorConsonantes += 1;
+            }
+      }
+    }
+    console.info(`La cadena ingresada contiene ${contadorVocales} vocales y ${contadorConsonantes} consonantes`);
 }
 
+contadorLetras("palindromo");
 
 //19) Programa una función que valide que un texto sea un nombre válido, pe. miFuncion("Jonathan MirCha") devolverá verdadero.
+const nombreValido = (nombre = "") =>{
+  if(!nombre)
+    console.warn("No ha ingresado un nombre");
+  if(nombre === "")
+    console.warn("El nombre esta en blanco");
+  let patron = /[A-Za-zñÑ-áéíóúÁÉÍÓÚ\s\t-]/;
+  if
+}
 
-
+nombreValido("Kenia Castro");
 
 
 //20) Programa una función que valide que un texto sea un email válido, pe. miFuncion("jonmircha@gmail.com") devolverá verdadero.
