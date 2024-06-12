@@ -369,17 +369,70 @@ const alCuadrado = (numeros = []) =>{
   if(numeros == "")
     console.warn("No ha ingresado una serie de numeros");
   let exponente = [];
-  for(let i = 0; i < numeros; i++){
-    exponente[i] = Math.pow(numeros[i],2);
-    console.log(exponente);
-  }
+  let exp = 0;
+  for(let i = 0; i < numeros.length; i++){
+    exp = Math.pow(numeros[i],2);
 
+    exponente.push(exp);
+    
+  }
+console.log(exponente);
 }
 
 alCuadrado([3,5,6,7]);
 
 //22) Programa una función que dado un array devuelva el número mas alto y el más bajo de dicho array, pe. miFuncion([1, 4, 5, 99, -60]) devolverá [99, -60].
+const masAltoMasBajo = (numeros = []) =>{
+  if(numeros == "")
+    console.warn("No ha ingresado una serie de numeros");
+  let min = Math.min(...numeros);
+  let max = Math.max(...numeros);;
 
+  console.log(`El valor menor es ${min} el valor mayor es ${max}`);
+}
 
+masAltoMasBajo([4,5,46,8,89]);
 
 //23) Programa una función que dado un array de números devuelva un objeto con 2 arreglos en el primero almacena los números pares y en el segundo los impares, pe. miFuncion([1,2,3,4,5,6,7,8,9,0]) devolverá {pares: [2,4,6,8,0], impares: [1,3,5,7,9]}.
+const paresImpares = (numeros = []) =>{
+  if(numeros == "")
+    console.warn("No ha ingresado una serie de numeros");
+  let par = [], impar = [], res = 0;
+  for(let i = 0; i < numeros.length; i++){
+    res = numeros[i]%2;
+    if(res === 0){
+      par.push(numeros[i]);
+    } else
+    {
+      impar.push(numeros[i]);
+    }
+  }
+console.log(`Pares: [${par}], impares: [${impar}]`);
+}
+
+paresImpares([3,5,6,7,29,12,56,34]);
+
+//24) Programa una función que dado un arreglo de números devuelva un objeto con dos arreglos, el primero tendrá los numeros ordenados en forma ascendente y el segundo de forma descendiente, pe. miFuncion([7, 5,7,8,6]) devolverá { asc: [5,6,7,7,8], desc: [8,7,7,6,5] }.
+const ascDes = (numeros = []) =>{
+  if(numeros === 0)
+    console.warn("No ha ingresado una serie de numeros");
+  if(!numeros instanceof Array) return("El valor ue ingrasaste no es un arreglo");
+  let min = Math.min(...numeros);
+  let max = Math.max(...numeros);;
+  let asc = [], desc = [];
+  for(let i = 0; i)
+
+  console.log(`El valor menor es ${min} el valor mayor es ${max}`);
+}
+
+ascDes([4,5,46,8,89]);
+
+
+
+
+//25) Programa una función que dado un arreglo de elementos, elimine los duplicados, pe. miFuncion(["x", 10, "x", 2, "10", 10, true, true]) devolverá ["x", 10, 2, "10", true].
+
+
+
+
+//26) Programa una función que dado un arreglo de números obtenga el promedio, pe. promedio([9,8,7,6,5,4,3,2,1,0]) devolverá 4.5.
