@@ -417,22 +417,84 @@ const ascDes = (numeros = []) =>{
   if(numeros === 0)
     console.warn("No ha ingresado una serie de numeros");
   if(!numeros instanceof Array) return("El valor ue ingrasaste no es un arreglo");
-  let min = Math.min(...numeros);
-  let max = Math.max(...numeros);;
+  
   let asc = [], desc = [];
-  for(let i = 0; i)
+  asc = numeros.sort();
+  desc = asc.reverse();
 
-  console.log(`El valor menor es ${min} el valor mayor es ${max}`);
+  console.log(`Asc: [${asc}], desc: [${desc}]`);
+  
 }
 
 ascDes([4,5,46,8,89]);
 
-
-
-
 //25) Programa una función que dado un arreglo de elementos, elimine los duplicados, pe. miFuncion(["x", 10, "x", 2, "10", 10, true, true]) devolverá ["x", 10, 2, "10", true].
+const eliminaDuplicados = (arr = []) => {
+  if(arr === 0)
+    console.warn("No ha ingresado una serie de numeros");
+  if(!arr instanceof Array) return("El valor ue ingrasaste no es un arreglo");
+  let unicos = [], element;
+  for(let i = 0; i < arr.length; i++){
+    element = arr[i];
+    if(!unicos.includes(arr[i])){
+      unicos.push(element);
+    }
+  }
+  console.log(unicos);
+}
 
-
-
+eliminaDuplicados(["x", 10, "x", 2, "10", 10, true, true]);
 
 //26) Programa una función que dado un arreglo de números obtenga el promedio, pe. promedio([9,8,7,6,5,4,3,2,1,0]) devolverá 4.5.
+const promedio = (numeros = []) => {
+  if(numeros === 0)
+    console.warn("No ha ingresado una serie de numeros");
+  if(!numeros instanceof Array) return("El valor ue ingrasaste no es un arreglo");
+  let promed = 0;
+  for(let i = 0; i < numeros.length; i++){
+    promed = promed + numeros[i];
+  }
+  promed = promed / numeros.length;
+  console.log(`El promedio es de ${promed}`);
+}
+
+promedio([9,8,7,6,5,4,3,2,1,0]);
+
+
+//27) Programa una clase llamada Pelicula.
+class Pelicula{
+  constructor(id, titulo, director, estreno, pais, generos, calificacion){
+    this.id = id;
+    this.titulo = titulo;
+    this.director = director;
+    this.estreno = estreno;
+    this.pais = pais;
+    this.generos = generos;
+    this.calificacion= calificacion;
+    this.validarIMBD(id);
+  }
+
+
+  validarCadena(propiedad, valor){
+    if(!valor) return console.warn(`${propiedad}"${valor}" esta vacio`);
+    if(typeof valor !== "string") return console.error(`${propiedad}"${valor}" ingresado, NO es una cadena de texto`); 
+  }
+  validarIMBD(id){
+    
+  }
+
+  
+}
+
+
+const peli = new Pelicula({
+
+})
+
+
+
+
+
+
+
+//Géneros Aceptados: Action, Adult, Adventure, Animation, Biography, Comedy, Crime, Documentary ,Drama, Family, Fantasy, Film Noir, Game-Show, History, Horror, Musical, Music, Mystery, News, Reality-TV, Romance, Sci-Fi, Short, Sport, Talk-Show, Thriller, War, Western
