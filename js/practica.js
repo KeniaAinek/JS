@@ -470,17 +470,29 @@ class Pelicula{
     this.estreno = estreno;
     this.pais = pais;
     this.generos = generos;
-    this.calificacion= calificacion;
+    this.calificacion = calificacion;
+
     this.validarIMBD(id);
   }
 
 
   validarCadena(propiedad, valor){
-    if(!valor) return console.warn(`${propiedad}"${valor}" esta vacio`);
-    if(typeof valor !== "string") return console.error(`${propiedad}"${valor}" ingresado, NO es una cadena de texto`); 
+    if(!valor) return console.warn(`${propiedad} "${valor}" esta vacio`);
+    if(typeof valor !== "string") return console.error(`${propiedad} "${valor}" ingresado, NO es una cadena de texto`); 
+
+    return true;
   }
+
+  validarLongitudCadena(propiedad, valor, longitud){
+    if(valor.length > longitud) return console.error(`${propiedad} "${valor}" excede el numero de caracteres perimtidos (${longitud}).`)
+  }
+
   validarIMBD(id){
-    
+    if(this.validarCadena("IMDB id", id)){
+      if(!(/^([a-z]){2}([0-9]){7}$/.test(id))){
+        return console.error(`IMDB id "${id}" no es valido, debe tener 9 caracteres, los dos primeros letras minisculas, los 7 restantes numeros`);
+      }
+    }
   }
 
   
@@ -488,8 +500,14 @@ class Pelicula{
 
 
 const peli = new Pelicula({
-
-})
+  id :"tt22022452",
+  titulo: "Del reves 2",
+  director: "Kelsey Mann",
+  estreno: 2024,
+  pais: ["USA"],
+  generos: ["Animation","Adventure","Comedy"],
+  calificacion: 8
+});
 
 
 
