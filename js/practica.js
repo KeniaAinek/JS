@@ -477,11 +477,11 @@ class Pelicula{
     this.validarDirector(director);
     this.validarEstreno(estreno);
     this.validarGeneros(generos);
+    this.validarCalificacion(calificacion);
   }
 
   static get listaGeneros(){
-    return ['Action',' Adult', 'Adventure', 'Animation', 'Biography', 'Comedy', 'Crime', 'Documentary' ,'Drama', 'Family', 'Fantasy', 'Film Noir', 'Game-Show', 'History', 'Horror','Musical', 'Music', 'Mystery', 'News', 'Reality-TV', 'Romance', 'Sci-Fi','Short', 'Sport', 'Talk-Show', 'Thriller', 'War', 'Western'];
-  }
+    return ["Action"," Adult", "Adventure", "Animation", "Biography", "Comedy", "Crime", "Documentary" ,"Drama", "Family", "Fantasy", "Film Noir", "Game-Show", "History", "Horror","Musical", "Music", "Mystery", "News", "Reality-TV", "Romance", "Sci-Fi","Short", "Sport", "Talk-Show", "Thriller", "War", "Western"]  }
 
   static generosAceptados(){
     return console.info(`Los generos aceptados son: ${Pelicula.listaGeneros.join(',')}`);
@@ -549,16 +549,29 @@ class Pelicula{
 
       validarGeneros(generos){
         if(this.validarArreglo("Generos", generos)){
-          for (let generp of generos){
-            console.log
+          for (let genero of generos){
+            //console.log(generos,Pelicula.listaGeneros.includes(generos));
+            if(!Pelicula.listaGeneros.includes(genero)){
+              return console.error(`Genero(s) incorrectos "${generos.join(',')}"`);
+            }
           }
         }
       }
 
-  
+      validarCalificacion(calificacion){
+        if(this.validarNumero("Calificacion", calificacion)){
+            return (calificacion < 0 || calificacion > 10)
+            ? console.error(`La calificacion tiene que estar en un rango de 0 a 10`)
+            : this.calificacion = calificacion.toFixed(1);
+          }
+        }
+
+        fichaTecnica(){
+          console.info(`Ficha Tecnica:\nTitulo:"${this.titulo}"\nDirector:"${this.director}"\nAño:"${this.estreno}"\nPais:"${this.pais.join("-")}"\nGeneros:"${this.generos.join(",")}"\nCalificacion:"${this.calificacion}"\nIMDB:"${this.id}"`)
+        }
 }
 
-Pelicula.generosAceptados();
+//Pelicula.generosAceptados();
 
 const peli = new Pelicula({
   id:"tt2202245",
@@ -570,6 +583,40 @@ const peli = new Pelicula({
   calificacion: 8
 });
 
+peli.fichaTecnica();
+
+const misPelis = [
+  {
+    id:"tt2202245",
+    titulo: "Del reves 2",
+    director: "Kelsey Mann",
+    estreno: 2024,
+    pais: ["USA"],
+    generos: ["Animation","Adventure","Comedy"],
+    calificacion: 8
+  },
+  {
+    id:"tt2202245",
+    titulo: "Del reves 2",
+    director: "Kelsey Mann",
+    estreno: 2024,
+    pais: ["USA"],
+    generos: ["Animation","Adventure","Comedy"],
+    calificacion: 8
+  },
+  {
+    id:"tt2202245",
+    titulo: "Del reves 2",
+    director: "Kelsey Mann",
+    estreno: 2024,
+    pais: ["USA"],
+    generos: ["Animation","Adventure","Comedy"],
+    calificacion: 8
+  }
+];
+
+
+misPelis.forEach(el => new Pelicula(el).fichaTecnica());
 
 
 
