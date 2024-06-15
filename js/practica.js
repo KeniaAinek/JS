@@ -463,7 +463,7 @@ promedio([9,8,7,6,5,4,3,2,1,0]);
 
 //27) Programa una clase llamada Pelicula.
 class Pelicula{
-  constructor(id, titulo, director, estreno, pais, generos, calificacion){
+  constructor({id, titulo, director, estreno, pais, generos, calificacion}){
     this.id = id;
     this.titulo = titulo;
     this.director = director;
@@ -473,8 +473,19 @@ class Pelicula{
     this.calificacion = calificacion;
 
     this.validarIMBD(id);
+    this.validarTitulo(titulo);
+    this.validarDirector(director);
+    this.validarEstreno(estreno);
+    this.validarGeneros(generos);
   }
 
+  static get listaGeneros(){
+    return ['Action',' Adult', 'Adventure', 'Animation', 'Biography', 'Comedy', 'Crime', 'Documentary' ,'Drama', 'Family', 'Fantasy', 'Film Noir', 'Game-Show', 'History', 'Horror','Musical', 'Music', 'Mystery', 'News', 'Reality-TV', 'Romance', 'Sci-Fi','Short', 'Sport', 'Talk-Show', 'Thriller', 'War', 'Western'];
+  }
+
+  static generosAceptados(){
+    return console.info(`Los generos aceptados son: ${Pelicula.listaGeneros.join(',')}`);
+  }
 
   validarCadena(propiedad, valor){
     if(!valor) return console.warn(`${propiedad} "${valor}" esta vacio`);
@@ -487,6 +498,23 @@ class Pelicula{
     if(valor.length > longitud) return console.error(`${propiedad} "${valor}" excede el numero de caracteres perimtidos (${longitud}).`)
   }
 
+  validarNumero(propiedad, valor){
+    if(!valor) return console.warn(`${propiedad} "${valor}" esta vacio`);
+    if(typeof valor !== "number") return console.error(` ${propiedad} "${valor} ingresado, NO es un numero"`);
+
+    return true;
+  }
+
+  validarArreglo(propiedad, valor){
+    if(!valor) return console.warn(`${propiedad} "${valor}" ingresado, NO es un arreglo`);
+    if(valor.length === 0) return console.error(`{propiedad} "${valor}" no tiene datos`);
+
+    for(let cadena of valor){
+      if(typeof cadena !== 'string') return console.error(`El valor '${cadena}' ingresada. NO es una cadena de texto`);
+    }
+    return true;
+  }
+
   validarIMBD(id){
     if(this.validarCadena("IMDB id", id)){
       if(!(/^([a-z]){2}([0-9]){7}$/.test(id))){
@@ -494,13 +522,46 @@ class Pelicula{
       }
     }
   }
+  
+      validarTitulo(titulo){
+        if(this.validarCadena("Titulo", titulo)){
+          this.validarLongitudCadena("Titulo", titulo,100);
+        }
+      }
+    
+      validarDirector(director){
+        if(this.validarCadena("Director", director)){
+          this.validarLongitudCadena("Director", director,50);
+        }
+      }
+
+      validarEstreno(estreno){
+        if(this.validarNumero("Anio de estreno", estreno)){
+          if(!(/^([0-9]){4}$/.test(estreno))){
+            return console.error(`Año de estreno "${estreno}" no es valido, debe ser un numero de 4 digitos`);
+          }
+        }
+      }
+
+      vaildarPais(pais){
+        this.validarArreglo("Pais",pais);
+      }
+
+      validarGeneros(generos){
+        if(this.validarArreglo("Generos", generos)){
+          for (let generp of generos){
+            console.log
+          }
+        }
+      }
 
   
 }
 
+Pelicula.generosAceptados();
 
 const peli = new Pelicula({
-  id :"tt22022452",
+  id:"tt2202245",
   titulo: "Del reves 2",
   director: "Kelsey Mann",
   estreno: 2024,
