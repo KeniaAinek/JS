@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Mukta', sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background: linear-gradient(90deg,#9290C3 0%, #535C91 100% );
+}
+.container{
+    margin: 12%;
+    width: 90%;
+    max-width: 676px;
+}
+.display{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    color: #333;
+    width: 90%;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    padding: 26px 20px ;
+    border-radius: 5px;
+}
+.container h1{
+    font-family: 'Playwrite IT Trad', sans-serif;
+    font-weight: 500;
+    font-size: 45px;
+    text-align: center;
+    color: #fff;
+}
+.container h2{
+    font-weight: 600;
+    margin-top: 40px;
+    color: #fff;
+}
+.container h2 span{
+    color: #1B1A55;
+    border-bottom: 4px solid #1B1A55;
+    padding-bottom: 7px;
+}
+.display i{
+    font-size: 30px;
+    cursor: pointer;
+    color: #070F2B;
+}
+.display input{
+    border: 0;
+    outline: 0;
+    font-size: 20px;
+}
+.container button i{
+    font-size: 20px;
+    cursor: pointer;
+    color:#fff;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.container button{
+    border: 0;
+    outline: 0;
+    font-size: 22px;
+    background-color: #1B1A55;
+    color: #fff;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 26px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+@media screen and (min-width: 820px) {
+    .container h1{
+        font-size: 60px;
+    }
+    .container h2{
+        font-size: 40px;
+    }
+    .display{
+        width: 100%;
+    }
+    .display input{
+        font-size: 30px;
+    }
+    .container button i{
+        font-size: 30px;
+    }
+    .container button {
+        font-size: 30px;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 30%;
+        margin-top: 30px;
+    }
+}
