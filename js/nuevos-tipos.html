@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevos tipos de Datos en JavaScript</title>
+</head>
+<body>
+    <h1>Nuevos tipos de datos en JavaScript</h1>
+    <script>
+        let id = Symbol("id");
+        let id2 = Symbol("id2");
+
+        console.log(id,id2);
+        console.log(typeof id, typeof id2);
+
+        const NOMBRE = Symbol();
+        const SALUDAR = Symbol();
+
+        const persona = {
+            [NOMBRE]: "Kenia",
+        }
+
+        console.log(persona);
+
+        persona.NOMBRE = "Kenia Castro";
+        console.log(persona);
+        console.log(persona.NOMBRE);
+        console.log(persona[NOMBRE]);
+
+        persona[SALUDAR] = function (){
+            
+        }
+
+    </script>
+</body>
+</html>
