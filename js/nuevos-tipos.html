@@ -8,7 +8,7 @@
 <body>
     <h1>Nuevos tipos de datos en JavaScript</h1>
     <script>
-        let id = Symbol("id");
+       /*  let id = Symbol("id");
         let id2 = Symbol("id2");
 
         console.log(id,id2);
@@ -19,6 +19,7 @@
 
         const persona = {
             [NOMBRE]: "Kenia",
+            edad: 35
         }
 
         console.log(persona);
@@ -29,8 +30,57 @@
         console.log(persona[NOMBRE]);
 
         persona[SALUDAR] = function (){
-            
+            console.log('Hola');
         }
+         console.log(persona);
+         persona[SALUDAR]();
+
+         for(let propiedad in persona){
+            console.log(propiedad );
+            console.log(persona[propiedad]);
+         }
+         console.log(Object.getOwnPropertySymbols(persona)); */
+
+         //Set arreglo mejorado que acepta valores unicos
+
+         /* const set = new Set([1,2,3,3,4,5,true,false,false,{},{},'hola','HOla']);
+         console.log(set);
+         console.log(set.size);
+
+         const set2 = new Set();
+         set2.add(1);
+         set2.add(2);
+         set2.add(2);
+         set2.add(3);
+         set2.add(true);
+         set2.add(false);
+         set2.add({});
+         set2.add(true);
+         console.log(set2);
+         console.log(set2.size);
+         
+         console.log('Recorriendo Set');
+         for(item of set){
+             console.log(item);
+            }
+            
+            console.log('Recorriendo Set2');
+            set2.forEach(item => console.log((item)));
+            
+            let arr = Array.from(set);
+            console.log(arr);
+            console.log(arr[0]);
+            
+            set.delete('Hola');
+            console.log(set2);
+            console.log(set2.has('Hola'));
+            set2.clear(); */
+
+            //Map
+            
+
+
+
 
     </script>
 </body>
