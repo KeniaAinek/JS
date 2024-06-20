@@ -76,10 +76,25 @@
             console.log(set2.has('Hola'));
             set2.clear(); */
 
-            //Map
+            //Map Collecion de datos como un objeto primitivo
+            let mapa = new Map();
+            mapa.set("nombre", "Kenia");
+            mapa.set("apellido","Castro");
+            mapa.set("edad", 29);
             
+            console.log(mapa);
+            console.log(mapa.size);
+            console.log(mapa.has("Correo"));
+            console.log(mapa.has("nombre"));
+            console.log(mapa.get("nombre"));
+            mapa.set("nombre","Kenia Castro");
+            console.log(mapa.get("nombre"));
+            mapa.delete("apellido");
+            console.log(mapa);
 
-
+            for(let [key, value] of mapa){
+                console.log("Llave: ${key}, Valor: ${value}");
+            }
 
 
     </script>
