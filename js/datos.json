@@ -1,0 +1,11 @@
+{
+  "cadena": "Kenia",
+  "numero": "32",
+  "booleano": "true",
+  "arreglo": ["correr", "Programar", "cocinar"],
+  "objeto": {
+  "x": " @kenia",
+  "email": "keniad.ctorres@gmail.com"
+  },
+  "nulo": null
+}
