@@ -62,7 +62,7 @@ console.log($linkDOM.dataset.description);
 $linkDOM.dataset.description = "Suscribete a youtubey comparte";
 console.log($linkDOM.dataset.description); */
 
-const $linkDOM = document.querySelector(".link-dom");
+/* const $linkDOM = document.querySelector(".link-dom");
 console.log($linkDOM.style);
 console.log($linkDOM.getAttribute("style"));
 console.log($linkDOM.style.backgroundColor);
@@ -79,10 +79,10 @@ $linkDOM.style.padding = "1rem";
 $linkDOM.style.borderRadius = ".5rem";
 
 console.log($linkDOM.style);
-console.log($linkDOM.getAttribute("style"));
+console.log($linkDOM.getAttribute("style")); */
 
 //Variables CSS-Custom Properties CSS
-const $html = document.documentElement,
+/* const $html = document.documentElement,
 $body = document.body;
 
 let varDarkColor = getComputedStyle($html).getPropertyValue("--dark-color");
@@ -95,4 +95,43 @@ $body.style.color = varYellowColor;
 
 $html.style.setProperty("--dark-color", "#000");
 varDarkColor = getComputedStyle($html).getPropertyValue("--dark-color");
-$body.style.setProperty("background-color", varDarkColor);
+$body.style.setProperty("background-color", varDarkColor); */
+
+/* const $card = document.querySelector(".card");
+
+console.log($card);
+console.log($card.className);
+console.log($card.classList);
+console.log($card.classList.contains("rotate-45"));
+$card.classList.add("rotate-45");
+console.log($card.classList.contains("rotate-45"));
+$card.classList.remove("rotate-45");
+$card.classList.toggle("rotate-45");
+$card.classList.replace("rotate-45", "rotate-135");
+$card.classList.add("opacity-80","sepia");
+$card.classList.toggle("opacity-80","sepia"); */
+
+/* const $whatItsDOM = document.getElementById("que-es");
+
+let text = `<p>El modelo de Objetos del Documento(<b><i>DOM-Document Object Model</i></b>) es un API para documentos HTML y XML</p>
+<p>Este provee una representacion estructural del documento, permitiendo modificar su contenido y presentacion visual mediante codigo JS</p>
+<p><mark>El DOM no es parte de la especificacion de JavaScript, es una API para los navegadores</mark></P>
+`;
+
+$whatItsDOM.innerText = text;
+$whatItsDOM.textContent = text;
+$whatItsDOM.innerHTML = text;
+$whatItsDOM.outerHTML = text;
+ */
+
+$cards= document.querySelector(".cards");
+console.log($cards);
+console.log($cards.children);
+console.log($cards.children[2]);
+console.log($cards.firstElementChild);
+console.log($cards.lastElementChild);
+console.log($cards.previousElementSibling);
+console.log($cards.nextElementSibling);
+console.log($cards.closest("div"));
+console.log($cards.closest("body"));
+console.log($cards.children[3].closest("section"));
