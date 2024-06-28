@@ -193,3 +193,55 @@ document.write("<h3>Meses de Año</h3>");
 $ul3.appendChild($fragment);
 document.body.appendChild($ul3); */
 
+/* const $cards = document.querySelector(".card"),
+$template = document.getElementById("template-card").content,
+$fragment = document.createDocumentFragment(),
+cardContent =[
+    {
+        title: "Tecnologia",
+        img: "https://picsum.photos/id/8/200/200",
+    },
+    {
+        title: "Animales",
+        img: "https://picsum.photos/id/40/200/200",
+    },
+    {
+        title: "Arquitectura",
+        img: "https://picsum.photos/id/57/200/200",
+    },
+    {
+        title: "Gente",
+        img: "https://picsum.photos/id/22/200/200",
+    },
+    {
+        title: "Naturaleza",
+        img: "https://picsum.photos/id/19/200/200",
+    },
+];
+
+cardContent.forEach(el =>{
+    $template.querySelector("img").setAttribute("src",el.img);
+    $template.querySelector("img").setAttribute("alt",el.title);
+    $template.querySelector("figcaption").textContent = el.title;
+    
+    let $clone = document.importNode($template, true);
+    $fragment.appendChild($clone);
+});
+
+$cards.appendChild($fragment); */
+
+const $cards = document.querySelector(".cards"),
+$newCard = document.createElement("figure"),
+$cloneCards = $cards.cloneNode(true);
+
+
+$newCard.innerHTML = `<img src="https://picsum.photos/200/200" alt="Any">
+<figcaption>Any</figcaption>`;
+
+$newCard.classList.add("card");
+
+//$cards.replaceChild($newCard, $cards.children[2]);
+//$cards.removeChild($cards.lastElementChild);
+//$cards.insertBefore($newCard, $cards.firstElementChild);
+document.body.appendChild($cloneCards);
+
