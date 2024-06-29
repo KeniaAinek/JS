@@ -230,7 +230,7 @@ cardContent.forEach(el =>{
 
 $cards.appendChild($fragment); */
 
-const $cards = document.querySelector(".cards"),
+/* const $cards = document.querySelector(".cards"),
 $newCard = document.createElement("figure"),
 $cloneCards = $cards.cloneNode(true);
 
@@ -243,5 +243,25 @@ $newCard.classList.add("card");
 //$cards.replaceChild($newCard, $cards.children[2]);
 //$cards.removeChild($cards.lastElementChild);
 //$cards.insertBefore($newCard, $cards.firstElementChild);
-document.body.appendChild($cloneCards);
+document.body.appendChild($cloneCards); */
+
+const $cards = document.querySelector(".cards"),
+$newCard = document.createElement("figure");
+
+let $contentCard = `<img src="https://picsum.photos/200/200" alt="Any">
+<figcaption>Any</figcaption>`;
+
+$newCard.classList.add("card");
+
+$newCard.insertAdjacentHTML("beforeend",$contentCard);
+$newCard.querySelector("figcaption").insertAdjacentText("afterbegin","Any");
+//$cards.insertAdjacentElement("beforebegin", $newCard);
+//$cards.insertAdjacentElement("afterbegin", $newCard);
+//$cards.insertAdjacentElement("beforeend", $newCard);
+//$cards.insertAdjacentElement("afterend", $newCard);
+
+//$cards.prepend($newCard);
+//$cards.append($newCard);
+//$cards.before($newCard);
+$cards.after($newCard);
 
