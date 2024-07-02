@@ -245,7 +245,7 @@ $newCard.classList.add("card");
 //$cards.insertBefore($newCard, $cards.firstElementChild);
 document.body.appendChild($cloneCards); */
 
-const $cards = document.querySelector(".cards"),
+/* const $cards = document.querySelector(".cards"),
 $newCard = document.createElement("figure");
 
 let $contentCard = `<img src="https://picsum.photos/200/200" alt="Any">
@@ -264,4 +264,34 @@ $newCard.querySelector("figcaption").insertAdjacentText("afterbegin","Any");
 //$cards.append($newCard);
 //$cards.before($newCard);
 $cards.after($newCard);
+
+ */
+
+  function holaMundo(){
+    alert("Hola mundo");
+    console.log(event);
+  }
+
+  function saludar(nombre = "Desconocid@"){
+    alert(`HolA ${nombre} -${event }`)
+  }
+
+  const $eventoSemantico = document.getElementById("evento-semantico");
+  const $eventoMiltiple = document.getElementById("evento-multiple");
+
+  $eventoSemantico.onclick = holaMundo;
+  $eventoSemantico.onclick = function (e){
+    alert("Hola mundo manejador de eventos semanticos");
+    console.log(e);
+    console.log(event);
+  };
+
+  $eventoMiltiple.addEventListener("click",holaMundo);
+  $eventoMiltiple.addEventListener("click",(e) => {
+    alert("Hola mundo Manejador de Eventos Multiples");
+    console.log(e.target);
+    console.log(e.type);
+  }); 
+
+  $eventoMiltiple.addEventListener("click",saludar);
 
