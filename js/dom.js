@@ -267,17 +267,19 @@ $cards.after($newCard);
 
  */
 
-  function holaMundo(){
+ /*  function holaMundo(){
     alert("Hola mundo");
     console.log(event);
   }
 
   function saludar(nombre = "Desconocid@"){
-    alert(`HolA ${nombre} -${event }`)
+    alert(`HolA ${nombre}`);
+    console.log(event);
   }
 
   const $eventoSemantico = document.getElementById("evento-semantico");
   const $eventoMiltiple = document.getElementById("evento-multiple");
+  const $eventoRemover = document.getElementById("evento-remover");
 
   $eventoSemantico.onclick = holaMundo;
   $eventoSemantico.onclick = function (e){
@@ -293,5 +295,45 @@ $cards.after($newCard);
     console.log(e.type);
   }); 
 
-  $eventoMiltiple.addEventListener("click",saludar);
+  $eventoMiltiple.addEventListener("click", () => {
+    saludar();
+    saludar("Kenia");
+});
 
+const removerDobleClick = (e) =>{
+    alert(`Removiendo el evento de tipo ${e.type}`);
+    console.log(e);
+    $eventoRemover.removeEventListener("dblclick", removerDobleClick );
+}
+
+$eventoRemover.addEventListener("dblclick", removerDobleClick); */
+
+
+const $divsEventos = document.querySelectorAll(".eventos-flujo div");
+$linkEventos = document.querySelector(".eventos-flujo a");
+
+function flujoEventos(e){
+    console.log(`Hola te saluda ${this.className}, el click lo origino ${e.target.className}`);
+    e.stopPropagation();
+}
+
+console.log($divsEventos);
+
+$divsEventos.forEach(div => {
+    //fase de burbuja
+    div.addEventListener("click", flujoEventos);
+    //div.addEventListener("click", flujoEventos, false);
+    //fase de captura
+    //div.addEventListener("click", flujoEventos, true);
+    /* div.addEventListener("click", flujoEventos, {
+        capture: false,
+        once: true
+    });
+ */
+});
+
+$linkEventos.addEventListener("click", e => {
+    alert("Hola estas visitando la pagina de Jonathan Mircha");
+    e.preventDefalult();
+    e.stopPropagation();
+})
