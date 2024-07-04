@@ -308,32 +308,90 @@ const removerDobleClick = (e) =>{
 
 $eventoRemover.addEventListener("dblclick", removerDobleClick); */
 
-
+/* 
 const $divsEventos = document.querySelectorAll(".eventos-flujo div");
 $linkEventos = document.querySelector(".eventos-flujo a");
 
 function flujoEventos(e){
     console.log(`Hola te saluda ${this.className}, el click lo origino ${e.target.className}`);
-    e.stopPropagation();
 }
 
-console.log($divsEventos);
+document.addEventListener("click", (e) =>{
+    console.log('Click en',e.target);
+    if(e.target.matches(".events-flujo div")){
+        flujoEventos(e);
+    }
 
-$divsEventos.forEach(div => {
-    //fase de burbuja
-    div.addEventListener("click", flujoEventos);
-    //div.addEventListener("click", flujoEventos, false);
-    //fase de captura
-    //div.addEventListener("click", flujoEventos, true);
-    /* div.addEventListener("click", flujoEventos, {
-        capture: false,
-        once: true
-    });
- */
+    if(e.target.matches(".eventos-flujo a")){
+        alert("Hola estas visitando la pagina de Jonathan Mircha");
+        e.preventDefalult();
+    }
 });
 
-$linkEventos.addEventListener("click", e => {
-    alert("Hola estas visitando la pagina de Jonathan Mircha");
-    e.preventDefalult();
-    e.stopPropagation();
-})
+//BOM Browser documeten ojkect
+window.addEventListener("resize", (e) => {
+console.log(window.innerWidth);
+console.log(window.innerHeight);
+console.log(window.outerWidth);
+console.log(window.outerHeight);
+console.log(window.scrollX);
+console.log(window.scrollY);
+console.log(e);
+});
+
+/* window.addEventListener("scroll", (e) => {
+   console.clear();
+   console.log("**********Evento Scroll **********");
+   console.log(window.scrollX);
+   console.log(window.scrollY);
+   console.log(e);
+});
+ 
+window.addEventListener("load", e => {
+   console.log("**********Evento Load **********");
+   console.log(window.screenX);
+   console.log(window.screenY);
+   console.log(e);
+});
+
+document.addEventListener("DOMContentLoaded", e => {
+    console.log("**********Evento DOMContentLoaded**********");
+   console.log(window.screenX);
+   console.log(window.screenY);
+   console.log(e);
+});
+
+ */
+/* 
+const $btnAbrir = document.getElementById("abrir-ventana"),
+$btnCerrar = document.getElementById("cerrar-ventana"),
+$btnImprimir = document.getElementById("imprimir-ventana");
+
+let ventana;
+
+$btnAbrir.addEventListener("click", (e) =>{
+    ventana = window.open("http://jonmircha.com");
+});
+
+$btnCerrar.addEventListener("click",(e) =>{
+    //window.close();
+    ventana.close();
+});
+
+$btnImprimir.addEventListener("click", (e) =>{
+    window.print();
+});
+ */
+
+console.log("**********Objeto URL (location)");
+console.log(location);
+console.log(location.origin);
+console.log(location.protocol);
+console.log(location.host);
+console.log(location.hostname);
+console.log(location.port);
+console.log(location.href);
+console.log(location.hash);
+console.log(location.pathname);
+
+
