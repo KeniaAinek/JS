@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+    box-sizing: border-box;
+}
+.head{
+    background: #4A249D;
+    width: 100%;
+    height: 12vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+.title h1{
+    color: #F6F5F5;
+}
+.content{
+    background-color: #F6F5F5;
+    width: 100%;
+    height: 78vh;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+.section h1{
+    color: #222;
+}
