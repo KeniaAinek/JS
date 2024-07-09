@@ -61,6 +61,7 @@ img{
     right: 0;
     left: 0;
     opacity: 0;
+    visibility: hidden;
     transition: transform .3s ease, opacity .3s ease;
     /* de arriba*/
     transform: translate(0,-100%);
@@ -75,6 +76,7 @@ img{
 .panel.is-active{
     transform: translate(0, 0);
     opacity: 1;
+    visibility: visible;
 }
 
 .panel-btn{
