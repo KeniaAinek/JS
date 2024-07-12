@@ -2,6 +2,7 @@
 import hamburguerMenu from "./menu_hamburguesa.js";
 import {reloj, alarma} from "./reloj.js"
 import { shortcuts, moveBall } from  "./teclado.js";
+import { countdown } from "./countdown.js"; 
 
 const d = document;
 
@@ -16,4 +17,4 @@ d.addEventListener("keydown",(e) =>{
     moveBall(e,".ball",".stage");
 });
 
-
+countdown(".contador", "2024,12,29");
