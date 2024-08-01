@@ -155,3 +155,24 @@ img{
     border-radius: 50%;
     background-color: var(--main-color);
 }
+
+.scroll-up:disabled{
+    position: fixed;
+    z-index: 999;
+    bottom: 1vh;
+    right: 13vw;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-color);
+    color: var(--third-color);
+    font-size: 2rem;
+}
+
+.scroll-up:hover{
+    background-color: var(--main-modal-color);
+}

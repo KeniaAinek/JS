@@ -3,6 +3,7 @@ import hamburguerMenu from "./menu_hamburguesa.js";
 import {reloj, alarma} from "./reloj.js"
 import { shortcuts, moveBall } from  "./teclado.js";
 import { countdown } from "./countdown.js"; 
+import { scrollUp }  from "./scroll_up.js"; 
 
 const d = document;
 
@@ -18,3 +19,5 @@ d.addEventListener("keydown",(e) =>{
 });
 
 countdown(".contador", "2024,12,29");
+
+scrollUp(".scroll-up", 600);
