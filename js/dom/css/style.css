@@ -160,7 +160,7 @@ img{
     position: fixed;
     z-index: 999;
     bottom: 1vh;
-    right: 13vw;
+    right: calc(4rem + 1.2vw);
     width: 4rem;
     height: 4rem;
     border-radius: 50%;
@@ -184,4 +184,29 @@ img{
 .hidden{
     visibility: hidden;
     opacity: 0;
+}
+
+.dark-light{
+    position: fixed;
+    z-index: 999;
+    bottom: 1vh;
+    left: 1vw;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-color);
+    color: var(--third-color);
+    font-size: 2rem;
+    outline: none;
+    border: 0;
+    transition: all 0.3s ease-out;
+}
+
+.dark-ligtj:hover{
+    background-color: var(--main-modal-color);
+    color: var(--second-color)
 }

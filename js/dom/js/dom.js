@@ -4,6 +4,7 @@ import {reloj, alarma} from "./reloj.js"
 import { shortcuts, moveBall } from  "./teclado.js";
 import { countdown } from "./countdown.js"; 
 import scrollUp from "./scroll_up.js";
+import darktTheme from "./darkt_theme.js";
 
 const d = document;
 
@@ -12,6 +13,7 @@ d.addEventListener("DOMContentLoaded", (e) =>{
     reloj(".clock",".init-rel",".stop-rel");
     alarma("assets/alarm.mp3",".alarm-init",".alarm-stop");
     scrollUp(".scroll-up");
+    darktTheme(".dark-ligth","dark-mode");
 });
 
 d.addEventListener("keydown",(e) =>{
