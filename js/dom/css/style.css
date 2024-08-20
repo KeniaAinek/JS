@@ -194,7 +194,6 @@ img{
     width: 4rem;
     height: 4rem;
     border-radius: 50%;
-    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -206,7 +205,12 @@ img{
     transition: all 0.3s ease-out;
 }
 
-.dark-ligtj:hover{
+.dark-light:hover{
     background-color: var(--main-modal-color);
     color: var(--second-color)
+}
+
+.dark-mode{
+    background-color: var(--second-color);
+    color: var(--main-color);
 }
