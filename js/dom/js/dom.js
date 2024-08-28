@@ -8,12 +8,12 @@ import darkTheme from "./dark_theme.js";
 
 const d = document;
 
+
 d.addEventListener("DOMContentLoaded", (e) =>{
     hamburguerMenu(".panel-btn",".panel",".menu a");
     reloj(".clock",".init-rel",".stop-rel");
     alarma("assets/alarm.mp3",".alarm-init",".alarm-stop");
     scrollUp(".scroll-up");
-    darkTheme(".dark-light","dark-mode");
 });
 
 d.addEventListener("keydown",(e) =>{
@@ -23,4 +23,5 @@ d.addEventListener("keydown",(e) =>{
 
 countdown(".contador", "2024,12,29");
 
+darkTheme(".dark-light","dark-mode");
 
