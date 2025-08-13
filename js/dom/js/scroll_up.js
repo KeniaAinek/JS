@@ -1,9 +1,26 @@
-const d = document;
-const verticalPosition = document.scrollingElement.scrollTop;
+const d = document, 
+w = window;
 
-export function scrollUp(btn, verticalPosition){
+export  default function scrollUp(btn){
 
-    if(verticalPosition > 600){
-        d.querySelector(btn).classList.disabled = false;
-    }
+        const $scrollBtn = d.querySelector(btn);
+        w.addEventListener("scroll",(e) => {
+            let scrollTop = w.pageYOffset || d.documentElement.scrollTop;
+            if(scrollTop > 600){
+                $scrollBtn.classList.remove("hidden");
+            }
+            else{
+                $scrollBtn.classList.add("hidden");
+            }
+            console.log(w.pageYOffset, d.documentElement.scrollTop);
+        });
+
+        d.addEventListener("click", (e) => {
+            if(e.target.matches(btn)){
+                w.scrollTo({
+                    behavior: "smooth",
+                    top: 0
+                });
+            }
+        });
 }
