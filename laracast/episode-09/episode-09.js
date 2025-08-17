@@ -1,4 +1,4 @@
-//Objects
+//Objects Parameters
 
 let person = {
     firstName: 'Jhon',
@@ -10,17 +10,35 @@ let person = {
 
 const game = (function () {
 
-    const secretNumber = Math.floor(Math.random() * 10) + 1;
-    const maxAttempts = 3;
-    const history = [];
+
 
     return{
-        play(){
+        play(options = {}){
+
+            if (typeof options.minRange === 'indefined'){
+                options.minRange = 1;
+            }
+            if (typeof options.maxRange === 'indefined'){
+                options.maxRange = 10;
+            }
+            if (typeof options.maxAttempts === 'indefined'){
+                options.minRange = 3;
+            }
+
+            const minRange = options.minRange;
+            const maxRange = options.maxRange;
+            const maxAttempts = options.maxAttempts;
+
+            
+            const secretNumber = Math.floor(
+                Math.random() * (maxRange -minRange + 1)) + 1;
+            const history = [];
+            
             while (history.length < maxAttempts) {
                 var input = prompt("Please enter a number between 1 and 10");
                 var guess = Number(input);
 
-                if (isNaN(guess) || guess < 1 || guess > 10) {
+                if (isNaN(guess) || guess < minRange || guess > maxRange) {
                     console.log("Please enter a valid number from 1 and 10");
                     continue;
                 }
