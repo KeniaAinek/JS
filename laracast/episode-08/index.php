@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript for PHP Developers - Episode 07</title>
+    <title>JavaScript for PHP Developers - Episode 08</title>
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="../assets/site.css">
 </head>
@@ -12,12 +12,12 @@
         <nav class="section md:!px-8 w-full py-3 bg-gray-950 border-b border-b-gray-700 mb-8 shadow-sm">
             <div class="relative h-full items-center">
                 <div class="relative h-full flex justify-between">
-                    <span class="text-xs font-bold uppercase text-gray-400">Episode 07: Arrays</span>       
+                    <span class="text-xs font-bold uppercase text-gray-400">Episode 08: Object Basics</span>       
                     <span class="text-xs font-bold uppercase text-gray-400">Laracasts</span>    
                 </div>
             </div>
         </nav>
     </div>
-    <script src="episode-07.js"></script>
+    <script src="episode-08.js"></script>
 </body>
 </html>
