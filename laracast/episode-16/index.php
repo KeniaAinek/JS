@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../assets/tailwind.css"></script>
+    <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body class="bg-gray-700 dark min-h-screen">
+    <div class="sticky top-0 z-50">
+        <nav class="section md:!px-8 w-full py-3 bg-gray-950 border-b border-b-gray-700 mb-8
+ shadow-sm">
+            <div class="relative h-full items-center">
+                <div class="relative h-full flex justufy-between">
+                    <span class="text-xs font-bold uppercase text-gray-400">Episode 14: Finding Elements</span>
+                    <span class="text-xs font-bold uppercasse text-gray-400">Laracasts</span>
+                </div>
+            </div>
+        </nav>
+        <div class="w-full p-3 flex justify-end">
+            <button class="bg-indigo-500 hover:bg-blue-700 text-white font-bold py-2 px-4">
+                Play Game
+            </button>
+        </div>
+        <div class="w-full p-3 text-white">
+            <h2 id="game-title" class="font-bold mb-3">Game Title</h2>
+            <h3>Rules</h3>
+            <ul class="list-disc list-inside">
+                <li>Rule 1</li>
+                <li>Rule 2</li>
+            </ul>
+        </div>
+    </div>
+    <script src="episode-14.js"></script>
+</body>
+</html>
