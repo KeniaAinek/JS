@@ -86,6 +86,11 @@ class Game {
             
             while (history.length < this.#maxAttempts) {
                 var input = prompt("Please enter a number between 1 and 10");
+
+                if (input === null){
+                    break;
+                }
+
                 var guess = Number(input);
 
                 if (isNaN(guess) || guess < this.#minRange || guess > this.#maxRange) {
@@ -126,27 +131,9 @@ function createLiElement({content}){
 
 
 let easyGame = new Game({maxAttempts: 10});
-const gameTitleElement = document.getElementById('game-title');
-gameTitleElement.replaceChildren();
-// gameTitleElemtnt.innerHTML = 'Easy Game';
-const titleTextNode = document.createTextNode('Easy Game');
-gameTitleElemtnt.appendChild(titleTextNode);
 
-const rulesListElement = document.querySelector('ul.list-disc.list-inside');
-// rulesListElement.innerHTML = `<li>Min: ${easyGame.minRange}</li>
-//                                 <li>Mac: ${easyGame.maxRange}</li>
-//                                 <li>Max Attempts: ${easyGame.maxAttempts}</li>`;
 
-const fragment = document.createDocumentFragment();
-
-// rulesListElement.appendChild(createLiElement({content: `Min: ${easyGame.minRange}`}));
-// rulesListElement.appendChild(createLiElement({content: `Max: ${easyGame.maxRange}`}));
-// rulesListElement.appendChild(createLiElement({content: `Max Attempts: ${easyGame.maxAttemptsRange}`}));
-
-fragment.appendChild(createLiElement({content: `Min: ${easyGame.minRange}`}));
-fragment.appendChild(createLiElement({content: `Max: ${easyGame.maxRange}`}));
-fragment.appendChild(createLiElement({content: `Max Attempts: ${easyGame.maxAttemptsRange}`}));
-
-rulesListElement.appendChild(fragment);
-
-const headingElements = document.querySelectorAll('h2, h3');
+document.getElementById('play-game-button').addEventListener('click', function(){
+    let easyGame = new Game({maxAttempts: 10});
+    easyGame.play();
+});
