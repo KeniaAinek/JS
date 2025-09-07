@@ -85,11 +85,16 @@ class Game {
             const history = [];
             
             while (history.length < this.#maxAttempts) {
-                var input = prompt("Please enter a number between 1 and 10");
+                var input = prompt(`Please enter a number between  ${this.#minRange} and ${this.#maxRange}`);
+
+                if (input === null){
+                    break;
+                }
+
                 var guess = Number(input);
 
                 if (isNaN(guess) || guess < this.#minRange || guess > this.#maxRange) {
-                    console.log("Please enter a valid number from 1 and 10");
+                    console.log(`Please enter a valid number from ${this.#minRange} and ${this.#maxRange}`);
                     continue;
                 }
 
@@ -115,14 +120,90 @@ class Game {
         }
 }
 
+function createLiElement({content}){
+    const element = document.createElement('li');
+    const textNode = document.createTextNode(content);
 
-let easyGame = new Game({maxAttempts: 10});
-const gameTitleElemtnt = document.getElementById('game-title');
-gameTitleElemtnt.innerHTML = 'Easy Game';
+    element.appendChild(textNode);
 
-const rulesListElement = document.querySelector('ul.list-disc.list-inside');
-rulesListElement.innerHTML = `<li>Min: ${easyGame.minRange}</li>
-                                <li>Mac: ${easyGame.maxRange}</li>
-                                <li>Max Attempts: ${easyGame.maxAttempts}</li>`;
+    return element;
+}
 
-const headingElements = document.querySelectorAll('h2, h3');
+function getBy(cssSelector){
+    return document.querySelector(cssSelector);
+}
+
+document.getElementsById('settings-form').addEventListener('submit', function(e){
+    e.preventDefault();
+
+    let titleElement = getBy('#input-title');
+    let minRangeElement = getBy('#input-min-range');
+    let maxRangeElement = getBy('#input-max-range');
+    let maxAttemptsElement = getBy('#input-max-attemps');
+    let gameLevelElement = getBy('#game-level');
+
+    const submitterName = e.submitter.names;
+
+    if(submitterName === 'play-game'){
+
+    let title = input-title.value;
+    let minRange = input-min-range.value;
+    let maxRange = input-max-range.value;
+    let maxAttempts = input-max-attemps.value;
+
+    // if(!title || !minRange || !maxRange || !maxAttempts){
+    //     alert('Please enter all settings');
+    //     return;
+    // }
+
+    let selectedOption = gameLevelElement.options[gameLevelElement.selectedIndex];
+
+    minRange = selectedOption.getAttribute('data-min-range');
+    maxRange = selectedOption.dataset.maxRange;
+    maxAttempts = selectedOption.dataset.attemps;
+
+
+
+
+    let easyGame = new Game({minRange, maxRange, maxAttempts});
+    easyGame.play();
+    } else {
+
+        titleElement.value = '';
+        minRangeElement.value = '';
+        maxRangeElement.value = '';
+        maxAttemptsElement.value = '';
+        console.clear();
+        
+    }
+});
+
+
+// document.getElementById('play-game').addEventListener('click', function(){
+//     easyGame.preventDefault();
+
+//     let title = document.getElementById('input-title').value;
+//     let minRange = document.getElementById('input-min-range').value;
+//     let maxRange = ducument.getElementById('input-max-range').value;
+//     let maxAttempts = document.getElementById('input-max-attemps').value;
+
+//     if(!title || !minRange || !maxRange || !maxAttempts){
+//         alert('Please enter all settings');
+//         return;
+//     }
+
+//     let easyGame = new Game({minRange, maxRange, maxAttempts});
+//     easyGame.play();
+// });
+
+// document.getElementById('clear-game').addEventListener('click', function(e){
+//     e.preventDefault();
+
+//     document.getElementById('input-title').value = '';
+//     document.getElementById('input-min-range').value = '';
+//     document.getElementById('input-max-range').value = '';
+//     document.getElementById('input-max-attempts').value = '';
+
+//     console.clear();
+    
+// });

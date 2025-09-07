@@ -86,6 +86,11 @@ class Game {
             
             while (history.length < this.#maxAttempts) {
                 var input = prompt("Please enter a number between 1 and 10");
+
+                if (input === null){
+                    break;
+                }
+
                 var guess = Number(input);
 
                 if (isNaN(guess) || guess < this.#minRange || guess > this.#maxRange) {
@@ -115,14 +120,20 @@ class Game {
         }
 }
 
+function createLiElement({content}){
+    const element = document.createElement('li');
+    const textNode = document.createTextNode(content);
+
+    element.appendChild(textNode);
+
+    return element;
+}
+
 
 let easyGame = new Game({maxAttempts: 10});
-const gameTitleElemtnt = document.getElementById('game-title');
-gameTitleElemtnt.innerHTML = 'Easy Game';
 
-const rulesListElement = document.querySelector('ul.list-disc.list-inside');
-rulesListElement.innerHTML = `<li>Min: ${easyGame.minRange}</li>
-                                <li>Mac: ${easyGame.maxRange}</li>
-                                <li>Max Attempts: ${easyGame.maxAttempts}</li>`;
 
-const headingElements = document.querySelectorAll('h2, h3');
+document.getElementById('play-game-button').addEventListener('click', function(){
+    let easyGame = new Game({maxAttempts: 10});
+    easyGame.play();
+});
