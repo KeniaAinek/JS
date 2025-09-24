@@ -1,15 +1,41 @@
-
-
-const spiderWoman = {
-    firstName: 'Emma',
-    lastName: 'Myers',
-    age: 23,
+interface Person{
+    firstName: string;
+    lastname: string;
+    age: number;
+    address: Address;
 }
 
-const madameWeb = {...spiderWoman};
+interface Address{
+    postalCode: string;
+    city: string;
+}
 
-spiderWoman.firstName = 'Gwen';
-spiderWoman.lastName = 'Stacy';
-spiderWoman.age = 23;
+const spiderWoman: Person = {
+    firstName: "Emma",
+    lastname: "Myers",
+    age: 23,
+    address: {
+        postalCode: 'ABC123',
+        city: 'New York',
+    }
+}
+
+// const spiderWoman = {
+//     firstName: 'Emma',
+//     lastName: 'Myers',
+//     age: 23,
+//     address: {
+//         postalCode: 'ABC123',
+//         city: 'New York',
+//     }
+// }
+
+// const madameWeb = {...spiderWoman};
+const madameWeb = structuredClone(spiderWoman);
+
+// madameWeb.firstName = 'Gwen';
+// madameWeb.lastName = 'Stacy';
+// madameWeb.age = 23;
+// madameWeb.address.city = 'San Jose';
 
 console.log(spiderWoman, madameWeb);
